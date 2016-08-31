@@ -1,0 +1,17 @@
+{
+  "name": "workspace",
+  "version": "1.0.0",
+  "description": "0towebapp example",
+  "main": "server.js",
+  "author": "Chris Hughes",
+  "dependencies": {
+    "async": "~0.2.8",
+    "express": "^4.13.3",
+    "socket.io": "~0.9.14"
+  },
+  "scripts": {
+    "start": "node app.js"
+  },
+  "devDependencies": {},
+  "license": "ISC"
+}
