@@ -75,21 +75,28 @@
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
-                    <li>
-                        <a class="page-scroll" href="#services">Services</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#portfolio">Portfolio</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#about">About</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#team">Team</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
-                    </li>
+                    
+                    <% for(i=0; i<nav.length; i++) {%>
+                        <li>
+                            <a class="page-scroll" href="#<%=nav[i].Link %>"><%=nav[i].Text %> </a>
+                        </li>
+                    <% } %>
+                    
+                    <!--<li>-->
+                    <!--    <a class="page-scroll" href="#services">Services</a>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                    <!--    <a class="page-scroll" href="#portfolio">Portfolio</a>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                    <!--    <a class="page-scroll" href="#about">About</a>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                    <!--    <a class="page-scroll" href="#team">Team</a>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                    <!--    <a class="page-scroll" href="#contact">Contact</a>-->
+                    <!--</li>-->
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -109,6 +116,16 @@
     </header>
 
     <!-- Services Section -->
+    
+    <ul>
+        <% for(var i=0; i<list.length; i++){%>
+            <li>
+                <h4> <%=list[i] %> </h4>
+            </li>
+        <%}%>
+    </ul>
+    
+    
     <section id="services">
         <div class="container">
             <div class="row">
@@ -249,69 +266,85 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">About</h2>
+                    <h2 class="section-heading">Our Events</h2>
                     <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-12">
                     <ul class="timeline">
-                        <li>
+                        <% for(var i=0; i<events.length; i++){%>
+                         <li>
                             <div class="timeline-image">
                                 <img class="img-circle img-responsive" src="img/about/1.jpg" alt="">
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
-                                    <h4>2009-2011</h4>
-                                    <h4 class="subheading">Our Humble Beginnings</h4>
+                                    <h4><%=events[i].date%> | <%=events[i].time%></h4>
+                                    <h4 class="subheading"><%=events[i].name%></h4>
                                 </div>
                                 <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                                    <p class="text-muted"><%=events[i].description%></p>
                                 </div>
                             </div>
                         </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/about/2.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>March 2011</h4>
-                                    <h4 class="subheading">An Agency is Born</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/about/3.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>December 2012</h4>
-                                    <h4 class="subheading">Transition to Full Service</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/about/4.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>July 2014</h4>
-                                    <h4 class="subheading">Phase Two Expansion</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
+                        <%}%>
+                        <!--<li>-->
+                        <!--    <div class="timeline-image">-->
+                        <!--        <img class="img-circle img-responsive" src="img/about/1.jpg" alt="">-->
+                        <!--    </div>-->
+                        <!--    <div class="timeline-panel">-->
+                        <!--        <div class="timeline-heading">-->
+                        <!--            <h4>2009-2011</h4>-->
+                        <!--            <h4 class="subheading">Our Humble Beginnings</h4>-->
+                        <!--        </div>-->
+                        <!--        <div class="timeline-body">-->
+                        <!--            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>-->
+                        <!--        </div>-->
+                        <!--    </div>-->
+                        <!--</li>-->
+                        <!--<li class="timeline-inverted">-->
+                        <!--    <div class="timeline-image">-->
+                        <!--        <img class="img-circle img-responsive" src="img/about/2.jpg" alt="">-->
+                        <!--    </div>-->
+                        <!--    <div class="timeline-panel">-->
+                        <!--        <div class="timeline-heading">-->
+                        <!--            <h4>March 2011</h4>-->
+                        <!--            <h4 class="subheading">An Agency is Born</h4>-->
+                        <!--        </div>-->
+                        <!--        <div class="timeline-body">-->
+                        <!--            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>-->
+                        <!--        </div>-->
+                        <!--    </div>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                        <!--    <div class="timeline-image">-->
+                        <!--        <img class="img-circle img-responsive" src="img/about/3.jpg" alt="">-->
+                        <!--    </div>-->
+                        <!--    <div class="timeline-panel">-->
+                        <!--        <div class="timeline-heading">-->
+                        <!--            <h4>December 2012</h4>-->
+                        <!--            <h4 class="subheading">Transition to Full Service</h4>-->
+                        <!--        </div>-->
+                        <!--        <div class="timeline-body">-->
+                        <!--            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>-->
+                        <!--        </div>-->
+                        <!--    </div>-->
+                        <!--</li>-->
+                        <!--<li class="timeline-inverted">-->
+                        <!--    <div class="timeline-image">-->
+                        <!--        <img class="img-circle img-responsive" src="img/about/4.jpg" alt="">-->
+                        <!--    </div>-->
+                        <!--    <div class="timeline-panel">-->
+                        <!--        <div class="timeline-heading">-->
+                        <!--            <h4>July 2014</h4>-->
+                        <!--            <h4 class="subheading">Phase Two Expansion</h4>-->
+                        <!--        </div>-->
+                        <!--        <div class="timeline-body">-->
+                        <!--            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>-->
+                        <!--        </div>-->
+                        <!--    </div>-->
+                        <!--</li>-->
                         <li class="timeline-inverted">
                             <div class="timeline-image">
                                 <h4>Be Part
